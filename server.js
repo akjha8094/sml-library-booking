@@ -3,6 +3,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const path = require('path');
+const fs = require('fs');
 
 // Load environment variables
 dotenv.config();
@@ -112,11 +113,26 @@ app.get('/api/health', (req, res) => {
 
 // Serve React frontend in production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'client/build')));
+  const buildPath = path.join(__dirname, 'client/build');
   
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build/index.html'));
-  });
+  // Check if build directory exists
+  if (fs.existsSync(buildPath)) {
+    app.use(express.static(buildPath));
+    
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(buildPath, 'index.html'));
+    });
+  } else {
+    // Fallback if build doesn't exist
+    app.get('/', (req, res) => {
+      res.status(200).json({
+        success: true,
+        message: 'Smart Library Booking System API Server',
+        version: '1.0.0',
+        documentation: 'See API documentation for available endpoints'
+      });
+    });
+  }
 }
 
 // Error handling middleware
