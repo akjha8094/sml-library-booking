@@ -1,0 +1,69 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║            ✅ SERVERS STARTED SUCCESSFULLY! ✅                ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+📊 SERVER STATUS:
+
+✅ Backend Server:  RUNNING on Port 5000
+✅ Frontend Server: RUNNING on Port 3000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🌐 ACCESS URLs:
+
+User Side:
+├─ Home:              http://localhost:3000
+├─ Login:             http://localhost:3000/login
+├─ My Bookings:       http://localhost:3000/my-bookings
+└─ Refund Requests:   http://localhost:3000/my-refund-requests
+
+Admin Side:
+├─ Login:             http://localhost:3000/admin/login
+├─ Dashboard:         http://localhost:3000/admin/dashboard
+└─ Refund Requests:   http://localhost:3000/admin/user-refund-requests
+
+Backend API:
+└─ Health Check:      http://localhost:5000/api/health
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 NEXT STEPS:
+
+1. Open browser and go to: http://localhost:3000
+2. Login as user or admin
+3. Test the refund request feature!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️ IF SERVERS STOP RUNNING:
+
+Run these commands to restart:
+
+Backend:
+cd c:\xampp\htdocs\new
+npm start
+
+Frontend:
+cd c:\xampp\htdocs\new\client
+npm start
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 IMPORTANT NOTES:
+
+✅ Both servers are running in separate PowerShell windows
+✅ Don't close these windows or servers will stop
+✅ You can minimize the windows if needed
+✅ Check console logs in these windows for any errors
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║         SERVERS ARE READY! OPEN BROWSER NOW! 🎉              ║
+║                                                               ║
+║              http://localhost:3000                            ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝

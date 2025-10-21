@@ -1,0 +1,116 @@
+╔════════════════════════════════════════════════════════════════╗
+║     🚀 QUICK FIX: "Failed to fetch refunds" Error             ║
+╚════════════════════════════════════════════════════════════════╝
+
+📌 PROBLEM:
+   The error "Failed to fetch refunds" occurs because the database 
+   tables for the advanced features haven't been created yet.
+
+✅ SOLUTION - Choose ONE method:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📍 METHOD 1: Automatic (Easiest) - Run the Batch File
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Make sure XAMPP MySQL is running (green in XAMPP Control Panel)
+
+2. Double-click this file:
+   📁 run-migration.bat
+
+3. Wait for "SUCCESS!" message
+
+4. Refresh your browser page
+
+✅ Done! The refunds page should work now.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📍 METHOD 2: Using phpMyAdmin (Recommended for Windows)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Open your browser and go to:
+   http://localhost/phpmyadmin
+
+2. Click on "sml_library" database in the left sidebar
+
+3. Click the "Import" tab at the top
+
+4. Click "Choose File" button
+
+5. Navigate to and select:
+   c:\xampp\htdocs\new\database\advanced_features.sql
+
+6. Scroll down and click "Go" button
+
+7. Wait for success message
+
+✅ Done! Refresh your refunds page.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📍 METHOD 3: Command Line (Alternative)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Open PowerShell in this folder and run:
+
+C:\xampp\mysql\bin\mysql.exe -u root sml_library < database\advanced_features.sql
+
+✅ Done!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 WHAT TABLES WILL BE CREATED:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ refunds                  - Refund records and history
+✓ admin_action_logs        - Audit trail of admin actions
+✓ admin_user_sessions      - Login as user sessions
+✓ booking_modifications    - Booking change history
+✓ auto_refund_rules        - Automated refund rules
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 AFTER MIGRATION, YOU CAN USE:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Refund Management       → http://localhost:3000/admin/refunds
+✅ Audit Logs              → http://localhost:3000/admin/audit-logs
+✅ Payment Refunds         → http://localhost:3000/admin/payments (Refund button)
+✅ Wallet Management       → http://localhost:3000/admin/members (Add/Deduct buttons)
+✅ Login as User           → http://localhost:3000/admin/members (Login as User button)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ TROUBLESHOOTING:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Problem: "Access denied for user 'root'"
+Solution: Your MySQL root user might have a password.
+         Update the command to:
+         mysql -u root -p sml_library < database\advanced_features.sql
+         Then enter your password when prompted.
+
+Problem: "Unknown database 'sml_library'"
+Solution: The main database hasn't been set up yet.
+         First run: database\schema.sql
+         Then run: database\advanced_features.sql
+
+Problem: Batch file doesn't work
+Solution: Use Method 2 (phpMyAdmin) instead - it's the most reliable.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 QUICK TIP:
+   The easiest and most reliable method for Windows users is 
+   METHOD 2 (phpMyAdmin). It has a visual interface and shows 
+   clear success/error messages.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Need help? Check the complete documentation:
+📄 ADVANCED_FEATURES_COMPLETE.md
+📄 SETUP_ADVANCED_FEATURES.md
+📄 QUICK_REFERENCE.md
+
+═══════════════════════════════════════════════════════════════
