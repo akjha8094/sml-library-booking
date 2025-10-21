@@ -8,13 +8,13 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install backend dependencies
-RUN npm ci --only=production
+RUN npm install --only=production
 
 # Copy backend source code
 COPY . .
 
 # Install frontend dependencies
-RUN cd client && npm ci --only=production
+RUN cd client && npm install --only=production
 
 # Build frontend
 RUN cd client && npm run build
