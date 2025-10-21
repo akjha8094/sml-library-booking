@@ -11,7 +11,8 @@
     "build": "cd client && npm install && npm run build",
     "serve-pwa": "node serve-pwa.js",
     "postinstall": "cd client && npm install",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "migrate": "node scripts/run-migrations.js"
   },
   "keywords": [
     "library",
